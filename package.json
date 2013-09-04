@@ -1,0 +1,39 @@
+{
+  "name": "semver-tags",
+  "description": "The best project ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/justin/semver-tags",
+  "author": {
+    "name": "Justin Russell",
+    "email": "jus.russell@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/justin/semver-tags.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justin/semver-tags/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/justin/semver-tags/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/semver-tags",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-simple-mocha": "~0.4.0",
+    "mocha": "~1.12.1",
+    "chai": "~1.7.2",
+    "grunt": "~0.4.0rc7"
+  },
+  "keywords": []
+}
