@@ -33,7 +33,12 @@
     "grunt-simple-mocha": "~0.4.0",
     "mocha": "~1.12.1",
     "chai": "~1.7.2",
-    "grunt": "~0.4.0rc7"
+    "grunt": "~0.4.0rc7",
+    "async": "~0.2.9",
+    "semver": "~2.1.0"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "findup": "~0.1.3"
+  }
 }
