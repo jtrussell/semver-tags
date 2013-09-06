@@ -3,7 +3,8 @@
 
 var get_repo_type = require('../lib/get-repo-type.js')
   , expect = require('chai').expect
-  , exec = require('child_process').exec;
+  , exec = require('child_process').exec
+  , join = require('path').join;
 
 /*
  * http://chaijs.com/api/bdd/
@@ -17,7 +18,7 @@ describe('get-repo-type', function() {
   });
 
   it('should recognize git repos', function(done) {
-    var gitDir = __dirname + '/fixtures/git-dir'; // execute with gitDir as cwd
+    var gitDir = join(__dirname, 'fixtures/git-dir');
     process.chdir(gitDir);
     get_repo_type(function(err, type) {
       expect(type).to.equal('git');
@@ -26,7 +27,7 @@ describe('get-repo-type', function() {
   });
 
   it('should recognized svn repos', function(done) {
-    var svnDir = __dirname + '/fixtures/svn-dir';
+    var svnDir = join(__dirname, '/fixtures/svn-dir');
     process.chdir(svnDir);
     get_repo_type(function(err, type) {
       expect(type).to.equal('svn');
