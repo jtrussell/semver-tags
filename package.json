@@ -1,6 +1,6 @@
 {
   "name": "semver-tags",
-  "description": "The best project ever.",
+  "description": "Get semver tags for a repo (git or svn)",
   "version": "0.1.0",
   "homepage": "https://github.com/jtrussell/semver-tags",
   "author": {
