@@ -1,7 +1,7 @@
 {
   "name": "semver-tags",
   "description": "Get semver tags for a repo (git or svn)",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/jtrussell/semver-tags",
   "author": {
     "name": "Justin Russell",
@@ -28,7 +28,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt nodeunit"
+    "test": "grunt test"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
