@@ -5,7 +5,24 @@ List the semver tags for your repo.
 ## Getting Started
 Install the module with: `npm install -g semver-tags`
 
-Now `cd` into your repo and run `semver-tags --help` to see available options.
+`cd` into your repo and run `semver-tags --help` to see available options.
+
+## CLI
+Get the latest semver tag:
+
+`semver-tags --last`
+
+Get the last three:
+
+`semver-tags --last 3`
+
+Get the first:
+
+`semver-tags --first`
+
+Nested repos of different flavors fouling things up?
+
+`semver-tags --repo-type svn --first`
 
 ## API
 ```javascript
