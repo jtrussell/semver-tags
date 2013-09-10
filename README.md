@@ -29,7 +29,7 @@ Nested repos of different flavors fouling things up?
 var semver_tags = require('semver-tags');
 
 semver_tags({
-  repoType: 'git', // 'git' or 'svn' --- Will attempto to auto detect if omitted
+  repoType: 'git', // 'git' or 'svn', Will attemp to to auto detect if omitted
   first: 3, // Get only the fist 3 semver tags
   last: 1 // Get only the last 1 semver tag
 }, function(err, tags) {
@@ -41,6 +41,12 @@ semver_tags({
 Note: All options are... well... optional. As is the entire options object. If
 you only care about getting all the semver tags for your repo just pass a
 callback.
+
+Note: `semver-tags` will attempt to auto detect your repo type (git or svn) by
+inspecting its surroundings. Currently this uses `findup-sync`. While this is
+usually fine for simple command line usage if you're concerned about blocking
+calls to the filesystem I'd suggest making use of the `repoType` option to bypass
+the auto detect.
 
 ## Contributing
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
