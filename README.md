@@ -1,4 +1,4 @@
-# semver-tags [![Build Status](https://secure.travis-ci.org/jtrussell/semver-tags.png?branch=master)](http://travis-ci.org/jtrussell/semver-tags)
+# semver-tags [![Build Status](https://secure.travis-ci.org/jtrussell/semver-tags.png?branch=master)](http://travis-ci.org/jtrussell/semver-tags) [![Dependency Status](https://david-dm.org/jtrussell/semver-tags.png)](https://david-dm.org/jtrussell/semver-tags)
 
 List the semver tags for your repo.
 
