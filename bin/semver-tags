@@ -5,6 +5,7 @@ var program = require('commander');
 program
   .version(require('../package.json').version)
   .option('--repo-type [type]', 'Specify a version control flavor e.g. git or svn')
+  .option('--repo-path [path]', 'Path to the remote repo')
   .option('--first [num=1]', 'Limit to last [num] tags')
   .option('--last [num=1]', 'Limit to first [num] tags')
   .parse(process.argv);
@@ -15,6 +16,11 @@ if(program.last === true) {
 
 if(program.first === true) {
   program.first = 1;
+}
+
+if(program.repoPath === true) {
+  console.log('The "repo-path" option requires an argument.');
+  process.exit();
 }
 
 require('../lib/semver-tags')(program, function(err, tags) {
