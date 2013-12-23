@@ -7,6 +7,9 @@ program
   .option('--repo-type [type]', 'Specify a version control flavor e.g. git or svn')
   .option('--first [num=1]', 'Limit to last [num] tags')
   .option('--last [num=1]', 'Limit to first [num] tags')
+  .option('--greater-than [version]', 'A lower bound version')
+  .option('--less-than [version]', 'An upper bound version')
+  .option('--satisfies [version]', 'A version mask to use as a filter e.g. 1.2.x')
   .parse(process.argv);
 
 if(program.last === true) {
@@ -15,6 +18,21 @@ if(program.last === true) {
 
 if(program.first === true) {
   program.first = 1;
+}
+
+if(program.greaterThan === true) {
+  console.log('The "greater-than" option requires a version number.');
+  process.exit();
+}
+
+if(program.lessThan === true) {
+  console.log('The "less-than" option requires a version number.');
+  process.exit();
+}
+
+if(program.satisfies === true) {
+  console.log('The "satisfies" option requires a version number.');
+  process.exit();
 }
 
 require('../lib/semver-tags')(program, function(err, tags) {
