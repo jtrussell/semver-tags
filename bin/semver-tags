@@ -19,7 +19,8 @@ if(program.first === true) {
 }
 
 if(program.repoPath === true) {
-  delete program.repoPath;
+  console.log('The "repo-path" option requires an argument.');
+  process.exit();
 }
 
 require('../lib/semver-tags')(program, function(err, tags) {
