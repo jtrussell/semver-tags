@@ -20,6 +20,18 @@ Get the first:
 
 `semver-tags --first`
 
+Set a lower bound:
+
+`semver-tags --greater-than 1.2.3`
+
+Set an upper bound:
+
+`semver-tags --less-than 1.2.3`
+
+Filter with a version mask:
+
+`semver-tags --satisfies ~1.2`
+
 Nested repos of different flavors fouling things up?
 
 `semver-tags --repo-type svn --first`
@@ -31,7 +43,10 @@ var semver_tags = require('semver-tags');
 semver_tags({
   repoType: 'git', // 'git' or 'svn', Will attemp to to auto detect if omitted
   first: 3, // Get only the fist 3 semver tags
-  last: 1 // Get only the last 1 semver tag
+  last: 1, // Get only the last 1 semver tag
+  greaterThan: '1.2.3', // Lower bound
+  lessThan: '1.2.3', // Upper bound
+  satisfies: '~1.2' // Version mask
 }, function(err, tags) {
   if(err) { /* ... */ }
   // Do something with tags array...
