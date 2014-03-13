@@ -13,8 +13,8 @@ var sort_semver_tags = require('../lib/sort-semver-tags.js')
 describe('sort-semver-tags', function() {
 
   it('should sort tags ignoring prefix "v"', function(done) {
-    var jumbledTags = fx('jumbled-tags').split('\n')
-      , sortedTags = ex('sorted-tags').split('\n');
+    var jumbledTags = fx('jumbled-tags').split(/\r?\n/)
+      , sortedTags = ex('sorted-tags').split(/\r?\n/);
 
     sort_semver_tags(jumbledTags, function(err, tags) {
       var i;

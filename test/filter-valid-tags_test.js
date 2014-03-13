@@ -13,8 +13,8 @@ var filter_valid_tags = require('../lib/filter-valid-tags.js')
 describe('filter-valid-tags', function() {
 
   it('should strip down to version number candidates', function(done) {
-    var allTags = fx('bogus-tags').split('\n')
-      , validTags = ex('valid-tags').split('\n');
+    var allTags = fx('bogus-tags').split(/\r?\n/)
+      , validTags = ex('valid-tags').split(/\r?\n/);
 
     filter_valid_tags(allTags, function(err, tags) {
       expect(tags.length).to.equal(validTags.length);
