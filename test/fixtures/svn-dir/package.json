@@ -1,0 +1,15 @@
+{
+  "name": "semver-tags::test-svn-dir",
+  "description": "Svn dir for testing",
+  "version": "0.3.3",
+  "homepage": "https://github.com/jtrussell/semver-tags",
+  "author": {
+    "name": "Justin Russell",
+    "email": "jus.russell@gmail.com"
+  },
+  "repository": {
+    "type": "svn",
+    "url": "https://fooobar.com/trunk"
+  }
+}
+
