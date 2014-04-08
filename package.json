@@ -43,7 +43,7 @@
   "dependencies": {
     "async": "^0.7.0",
     "semver": "~2.2.1",
-    "commander": "^2.1.0",
+    "commander": "^2.2.0",
     "findup-sync": "^0.1.3"
   }
 }
