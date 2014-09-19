@@ -36,12 +36,17 @@ Nested repos of different flavors fouling things up?
 
 `semver-tags --repo-type svn --first`
 
+Reposity located elsewhere?
+
+`semver-tags --repo-path https://github.com/jtrussell/semver-tags.git`
+
 ## API
 ```javascript
 var semver_tags = require('semver-tags');
 
 semver_tags({
   repoType: 'git', // 'git' or 'svn', Will attemp to to auto detect if omitted
+  repoPath: 'https://github.com/jtrussell/semver-tags.git', // Defaults to cwd
   first: 3, // Get only the fist 3 semver tags
   last: 1, // Get only the last 1 semver tag
   greaterThan: '1.2.3', // Lower bound
