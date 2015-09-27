@@ -41,10 +41,10 @@
   },
   "keywords": [],
   "dependencies": {
-    "commander": "^2.2.0",
-    "findup-sync": "^0.2.1",
-    "svn-project-root": "^0.1.0",
-    "async": "^1.2.1",
-    "semver": "^4.3.6"
+    "async": "^1.4.2",
+    "commander": "^2.8.1",
+    "findup-sync": "^0.3.0",
+    "semver": "^5.0.3",
+    "svn-project-root": "^0.1.0"
   }
 }
