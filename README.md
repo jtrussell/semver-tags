@@ -65,15 +65,16 @@ callback.
 Note: `semver-tags` will attempt to auto detect your repo type (git or svn) by
 inspecting its surroundings. Currently this uses `findup-sync`. While this is
 usually fine for simple command line usage if you're concerned about blocking
-calls to the filesystem I'd suggest making use of the `repoType` option to bypass
-the auto detect.
+calls to the filesystem I'd suggest making use of the `repoType` option to
+bypass the auto detect.
 
 ## Contributing
-In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+In lieu of a formal style guide, take care to maintain the existing coding
+style. Add unit tests for any new or changed functionality. Lint and test your
+code using [Grunt](http://gruntjs.com/).
 
 ## Release History
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2013 Justin Russell  
 Licensed under the MIT license.
