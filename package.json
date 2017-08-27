@@ -1,7 +1,7 @@
 {
   "name": "semver-tags",
   "description": "Get semver tags for a repo (git or svn)",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "homepage": "https://github.com/jtrussell/semver-tags",
   "author": {
     "name": "Justin Russell",
