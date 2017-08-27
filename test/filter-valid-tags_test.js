@@ -1,27 +1,25 @@
-/*global describe, it */
-'use strict';
+/* global describe, it */
+'use strict'
 
-var filter_valid_tags = require('../lib/filter-valid-tags.js')
-  , expect = require('chai').expect
-  , fx = require('./test-util.js').fx
-  , ex = require('./test-util.js').ex;
+const filterValidTags = require('../lib/filter-valid-tags.js')
+const expect = require('chai').expect
+const fx = require('./test-util.js').fx
+const ex = require('./test-util.js').ex
 
 /*
  * http://chaijs.com/api/bdd/
  */
 
-describe('filter-valid-tags', function() {
+describe('filter-valid-tags', () => {
+  it('should strip down to version number candidates', (done) => {
+    const allTags = fx('bogus-tags').split(/\r?\n/)
+    const validTags = ex('valid-tags').split(/\r?\n/)
 
-  it('should strip down to version number candidates', function(done) {
-    var allTags = fx('bogus-tags').split(/\r?\n/)
-      , validTags = ex('valid-tags').split(/\r?\n/);
-
-    filter_valid_tags(allTags, function(err, tags) {
-      expect(tags.length).to.equal(validTags.length);
-      expect(tags).to.include.members(validTags);
-      done();
-    });
-  });
-
-});
-
+    filterValidTags(allTags, (err, tags) => {
+      expect(err).to.be.a('null')
+      expect(tags.length).to.equal(validTags.length)
+      expect(tags).to.include.members(validTags)
+      done()
+    })
+  })
+})

@@ -1,30 +1,26 @@
-/*global describe, it */
-'use strict';
+/* global describe, it */
+'use strict'
 
-var sort_semver_tags = require('../lib/sort-semver-tags.js')
-  , expect = require('chai').expect
-  , fx = require('./test-util.js').fx
-  , ex = require('./test-util.js').ex;
+const sortSemverTags = require('../lib/sort-semver-tags.js')
+const expect = require('chai').expect
+const fx = require('./test-util.js').fx
+const ex = require('./test-util.js').ex
 
 /*
  * http://chaijs.com/api/bdd/
  */
 
-describe('sort-semver-tags', function() {
+describe('sort-semver-tags', () => {
+  it('should sort tags ignoring prefix "v"', (done) => {
+    const jumbledTags = fx('jumbled-tags').split(/\r?\n/)
+    const sortedTags = ex('sorted-tags').split(/\r?\n/)
 
-  it('should sort tags ignoring prefix "v"', function(done) {
-    var jumbledTags = fx('jumbled-tags').split(/\r?\n/)
-      , sortedTags = ex('sorted-tags').split(/\r?\n/);
-
-    sort_semver_tags(jumbledTags, function(err, tags) {
-      var i;
-      for(i = sortedTags.length; i--;) {
-        expect(tags[i]).to.equal(sortedTags[i]);
+    sortSemverTags(jumbledTags, (err, tags) => {
+      expect(err).to.be.a('null')
+      for (let i = sortedTags.length; i--;) {
+        expect(tags[i]).to.equal(sortedTags[i])
       }
-      done();
-    });
-  });
-
-});
-
-
+      done()
+    })
+  })
+})

@@ -1,23 +1,13 @@
-'use strict';
+'use strict'
 
-module.exports = function(grunt) {
-
+module.exports = (grunt) => {
   grunt.initConfig({
     simplemocha: {
       files: ['test/**/*_test.js']
     },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      lib: {
-        src: ['lib/**/*.js']
-      },
-      test: {
-        src: ['test/**/*.js']
+    standard: {
+      all: {
+        src: '{lib/,test/}*.js'
       }
     },
     watch: {
@@ -35,27 +25,26 @@ module.exports = function(grunt) {
       }
     },
     bump: {
-     options: {
+      options: {
         commitMessage: 'chore: Bump for release (v%VERSION%)',
         files: ['package.json'],
         commitFiles: ['-a'],
         push: false
       }
     }
-  });
+  })
 
-  grunt.registerTask('addGitDirForTest', function() {
+  grunt.registerTask('addGitDirForTest', () => {
     // Kinda gross but git won't check this in
-    grunt.file.write(__dirname + '/test/fixtures/git-dir/.git/foo', '');
-  });
+    grunt.file.write(__dirname + '/test/fixtures/git-dir/.git/foo', '')
+  })
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-simple-mocha');
-  grunt.loadNpmTasks('grunt-bump');
+  grunt.loadNpmTasks('grunt-standard')
+  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-simple-mocha')
+  grunt.loadNpmTasks('grunt-bump')
 
-  grunt.registerTask('test', ['jshint', 'addGitDirForTest', 'simplemocha']);
+  grunt.registerTask('test', ['standard', 'addGitDirForTest', 'simplemocha'])
 
-  grunt.registerTask('default', ['test']);
-
-};
+  grunt.registerTask('default', ['test'])
+}
