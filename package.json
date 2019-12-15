@@ -32,19 +32,20 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.4",
     "grunt-bump": "^0.8.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-simple-mocha": "^0.4.1",
     "grunt-standard": "^3.1.0",
-    "mocha": "^2.5.3"
+    "mocha": "^6.2.2"
   },
   "keywords": [],
   "dependencies": {
     "async": "^2.0.0",
     "commander": "^2.9.0",
-    "findup-sync": "^0.4.2",
-    "semver": "^5.2.0",
+    "findup-sync": "^4.0.0",
+    "semver": "^5.3.0",
     "svn-project-root": "^0.1.0"
   }
 }

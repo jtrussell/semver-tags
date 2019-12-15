@@ -11,7 +11,7 @@ const ex = require('./test-util.js').ex
  */
 
 describe('sort-semver-tags', () => {
-  it('should sort tags ignoring prefix "v"', (done) => {
+  it('should sort tags ignoring prefix "v"', done => {
     const jumbledTags = fx('jumbled-tags').split(/\r?\n/)
     const sortedTags = ex('sorted-tags').split(/\r?\n/)
 
